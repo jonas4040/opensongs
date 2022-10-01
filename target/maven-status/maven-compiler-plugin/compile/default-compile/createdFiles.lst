@@ -1,0 +1,7 @@
+org/opensongs/model/Playlist.class
+org/opensongs/dao/GenericDAO.class
+org/opensongs/model/Musica.class
+org/opensongs/controller/LoginServlet.class
+org/opensongs/dao/UsuarioDAO.class
+org/opensongs/controller/MyPlaylistsServlet.class
+org/opensongs/model/Usuario.class

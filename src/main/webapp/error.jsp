@@ -37,7 +37,7 @@
 			<div class="col-md-12">
 
 				<h4 class="text-center" id="h4error">
-					ERRO: ${erroSTR} <!-- TODO erro aqui -->>
+					ERRO: ${erroSTR}
 				</h4>
 			</div>
 		</div>
