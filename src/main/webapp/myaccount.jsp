@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8" isELIgnored="false"%>
 
 <!DOCTYPE html>
-<jsp:useBean id="Usuario" type="org.opensongs.model.Usuario"
+<jsp:useBean id="Usuario" class="org.opensongs.model.Usuario"
 	scope="session" />
 <html lang="en">
 <head>
