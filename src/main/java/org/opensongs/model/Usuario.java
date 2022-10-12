@@ -52,4 +52,14 @@ public class Usuario implements Serializable {
 
 	public Usuario(){
 	}
+	
+	public String toString() {
+		StringBuilder str = new StringBuilder();
+		str.append(id);
+		str.append(" ");
+		str.append(nome);
+		str.append(" ");
+		str.append(email);
+		return str.toString();
+	}
 }

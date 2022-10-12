@@ -3,6 +3,7 @@ package org.opensongs.dao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +19,33 @@ public class UsuarioDAO implements GenericDAO{
 	}
 	
 	@Override
-	public void create(Object objeto) {}
+	public void create(Object objeto) {
+		try {
+			if(objeto instanceof Usuario) {
+				Usuario usuario = (Usuario)objeto;
+				String query = "INSERT INTO tblUsuario VALUES (null,?,?,?)";
+				PreparedStatement preparedStatement = dataSource.
+						getConnection().prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+				preparedStatement.setString(1, usuario.getNome());
+				preparedStatement.setString(2, usuario.getEmail());
+				preparedStatement.setString(3, usuario.getPass());
+				
+				Integer numRegsAfetados = preparedStatement.executeUpdate();
+				if(numRegsAfetados != 0) {
+					ResultSet resSet = preparedStatement.getGeneratedKeys();
+					if(resSet.next()) {
+						usuario.setId(resSet.getInt(1));
+					}
+					resSet.close();
+				}
+				preparedStatement.close();
+			}else {
+				throw new RuntimeException("Objeto inválido");
+			}
+		}catch(SQLException e) {
+			System.out.println("\n\tErro ao criar usuário --> "+e.getMessage());
+		}
+	}
 	
 	@Override
 	public List<Object> read(Object objCriterio) {//faz algum select

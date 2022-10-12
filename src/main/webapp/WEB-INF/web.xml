@@ -13,6 +13,14 @@
 		<description></description> -->
 		<servlet-class>org.opensongs.controller.MyPlaylistsServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>NewUserServlet</servlet-name>
+		<servlet-class>org.opensongs.controller.NewUserServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>CreateUserServlet</servlet-name>
+		<servlet-class>org.opensongs.controller.CreateUserServlet</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>LoginServlet</servlet-name>
 		<url-pattern>/loginservlet</url-pattern>
@@ -24,5 +32,13 @@
 	<servlet-mapping>
 		<servlet-name>MyPlaylistsServlet</servlet-name>
 		<url-pattern>/playlists</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>NewUserServlet</servlet-name>
+		<url-pattern>/signup</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CreateUserServlet</servlet-name>
+		<url-pattern>/createuser</url-pattern>
 	</servlet-mapping>
 </web-app>

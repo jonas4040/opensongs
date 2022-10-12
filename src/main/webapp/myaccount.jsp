@@ -45,7 +45,7 @@
 			<div class="col-md-2">&nbsp;</div>
 			<div class="col-md-2 botao btnlink">
 				<span class="text-center"><a class="botaospt"
-					href="novamusica">Upload</a></span>
+					href="newsong">Upload</a></span>
 			</div>
 			<div class="col-md-2 botao btnlink">
 				<span class="text-center"><a class="botaospt"
@@ -53,10 +53,10 @@
 			</div>
 			<div class="col-md-2  botao btnlink">
 				<span class="text-center"><a class="botaospt"
-					href="novaplaylist">Add Playlist</a></span>
+					href="newplaylist">Add Playlist</a></span>
 			</div>
 			<div class="col-md-2  botao btnlink">
-				<span class="text-center"><a class="botaospt" href="logout">Logout</a>
+				<span class="text-center"><a class="botaospt" href="signout">Logout</a>
 				</span>
 			</div>
 			<div class="col-md-2">&nbsp;</div>
