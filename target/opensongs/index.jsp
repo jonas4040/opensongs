@@ -58,7 +58,7 @@
 						<button type="submit" class="btn btn-primary">
 							Enviar Dados
 						</button>
-                                            N&atilde;o tem conta? Clique <a href="novousuario">AQUI</a>
+                                            N&atilde;o tem conta? Clique <a href="signup">AQUI</a>
 					</form>
 				</div>
 				<div class="col-md-2">

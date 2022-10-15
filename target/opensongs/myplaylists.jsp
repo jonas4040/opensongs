@@ -3,8 +3,8 @@
 
 <jsp:useBean id="Usuario" class="org.opensongs.model.Usuario"
 	scope="session" />
- <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
- 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,7 +47,7 @@
 			<div class="col-md-2">&nbsp;</div>
 			<div class="col-md-2 botao btnlink">
 				<span class="text-center"><a class="botaospt"
-					href="novamusica">Upload</a></span>
+					href="newsong">Upload</a></span>
 			</div>
 			<div class="col-md-2 botao btnlink">
 				<span class="text-center"><a class="botaospt"
@@ -55,27 +55,50 @@
 			</div>
 			<div class="col-md-2  botao btnlink">
 				<span class="text-center"><a class="botaospt"
-					href="novaplaylist">Add Playlist</a></span>
+					href="newplaylist">Add Playlist</a></span>
 			</div>
 			<div class="col-md-2  botao btnlink">
-				<span class="text-center"><a class="botaospt" href="logout">Logout</a>
+				<span class="text-center"><a class="botaospt" href="signout">Logout</a>
 				</span>
 			</div>
 			<div class="col-md-2">&nbsp;</div>
 			<div class="col-md-2"></div>
 		</div>
-			<!-- Várias iterações -->
+		<!-- Várias iterações -->
 		<c:forEach var="playlist" items="${Usuario.playlists}">
 			<div class="row">
 				<div class="col-md-2">&nbsp;</div>
-				<div class="col-md-8">&nbsp; ${playlist.titulo}</div>
+				<div class="col-md-8">
+					&nbsp; <strong>${playlist.titulo}</strong><br />
+					<ul>
+						<c:forEach var="musica" items="${playlist.musicas}">
+							<div class="row center"><li>
+								${musica.titulo}(${musica.artista})
+								<audio controls>
+								
+									<source src="${musica.linkMP3}" />
+								
+								</audio>
+							</li></div>
+						</c:forEach>
+					</ul>
+				</div>
 				<div class="col-md-2">&nbsp;</div>
 			</div>
+			<div class="row">
+				<div class="col-md-4">
+					&nbsp;<a href="#play">Aperte o play</a>
+				</div>
+			</div>
+			<div id="play" class="row">
+				
+			</div>
 		</c:forEach>
+
 	</div>
 
-	<script src="js/jquery.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/scripts.js"></script>
+	<script  src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" 
+	crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>	<script src="js/scripts.js"></script>
 </body>
 </html>
