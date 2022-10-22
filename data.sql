@@ -1,9 +1,9 @@
 /*create database opensongsdb;
-create user 'opensongs'@'localhost' IDENTIFIED BY 'Mus1c4!';
+create user 'opensongs'@'localhost' IDENTIFIED BY 't3mMus1c4!';
 grant all PRIVILEGES ON opensongsdb.* to 'opensongs'@'localhost';
 
 
-CREATE TABLE tblmusica(
+CREATE TABLE tblMusica(
 	idMusica int not null auto_increment,
     artista varchar(100),
     album varchar(100),
