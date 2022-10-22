@@ -15,8 +15,8 @@ public class DataSource {
 	public DataSource() {
 		try {
 			this.hostname="localhost";
-			this.username="root";
-			this.password="root";
+			this.username="opensongs";
+			this.password="t3mMus1c4!"; // mudar para a sua senha
 			this.database="opensongsdb";
 			this.port="3306";
 			

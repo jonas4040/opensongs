@@ -30,7 +30,7 @@ public class CreateUserServlet extends HttpServlet{
 			DataSource dataSource = new DataSource();
 			UsuarioDAO usuarioDAO = new UsuarioDAO(dataSource);
 			usuarioDAO.create(usuario);
-			System.out.println(usuario);
+			//System.out.println(usuario);
 			try {
 				dataSource.getConnection().close();
 			} catch (SQLException sqlEx) {
