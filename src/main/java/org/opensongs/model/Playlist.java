@@ -5,6 +5,7 @@ import java.util.List;
 
 public class Playlist implements Serializable {
 	private int id;
+	private Usuario usuario;
 	private String titulo;
 	private List<Musica> musicas;
 	
@@ -24,6 +25,14 @@ public class Playlist implements Serializable {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 
 	public String getTitulo() {

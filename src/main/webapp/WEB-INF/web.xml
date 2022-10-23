@@ -38,12 +38,22 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>AfaServlet</display-name>
-    <servlet-name>AfaServlet</servlet-name>
+    <display-name>NewPlaylistServlet</display-name>
+    <servlet-name>NewPlaylistServlet</servlet-name>
     <servlet-class>org.opensongs.controller.NewPlaylistServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>AfaServlet</servlet-name>
-    <url-pattern>/AfaServlet</url-pattern>
+    <servlet-name>NewPlaylistServlet</servlet-name>
+    <url-pattern>/newplaylist</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CreatePlaylistServlet</display-name>
+    <servlet-name>CreatePlaylistServlet</servlet-name>
+    <servlet-class>org.opensongs.controller.CreatePlaylistServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CreatePlaylistServlet</servlet-name>
+    <url-pattern>/createplaylist</url-pattern>
   </servlet-mapping>
 </web-app>

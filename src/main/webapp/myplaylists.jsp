@@ -69,7 +69,8 @@
 			<div class="row">
 				<div class="col-md-2">&nbsp;</div>
 				<div class="col-md-8">
-					&nbsp; <strong>${playlist.titulo}</strong><br />
+					&nbsp; <strong>${playlist.titulo}</strong>
+					&nbsp;<a href="#play">Aperte o play</a><br />
 					<ul>
 						<c:forEach var="musica" items="${playlist.musicas}">
 							<div class="row center"><li>
@@ -84,14 +85,6 @@
 					</ul>
 				</div>
 				<div class="col-md-2">&nbsp;</div>
-			</div>
-			<div class="row">
-				<div class="col-md-4">
-					&nbsp;<a href="#play">Aperte o play</a>
-				</div>
-			</div>
-			<div id="play" class="row">
-				
 			</div>
 		</c:forEach>
 
