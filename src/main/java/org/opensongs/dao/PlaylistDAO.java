@@ -4,6 +4,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.opensongs.model.Playlist;
@@ -43,7 +44,28 @@ public class PlaylistDAO implements GenericDAO{
 
 	@Override
 	public List<Object> read(Object objCriterio) {
-		// TODO Auto-generated method stub
+		try {
+			String query="SELECT * FROM tblPlaylist WHERE idUsuario=?";
+			Integer idUsuario=(Integer) objCriterio;
+			
+			PreparedStatement stm =dataSource.getConnection().prepareStatement(query);
+			stm.setInt(1, idUsuario);
+			ResultSet resultSet = stm.executeQuery();
+			
+			List<Object> playlistList = new ArrayList<>();
+			while(resultSet.next()) {
+				Playlist playlist = new Playlist();
+				playlist.setId(resultSet.getInt("idPlaylist"));
+				playlist.setTitulo(resultSet.getString("titulo"));
+				playlistList.add(playlist);
+			}
+			resultSet.close();
+			stm.close();
+			return playlistList;
+			
+		}catch(SQLException e) {
+			System.out.println("Erro ao recuperar playlists já gravadas "+e.getMessage());
+		}
 		return null;
 	}
 
