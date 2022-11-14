@@ -51,7 +51,7 @@
 			</div>
 			<div class="col-md-2 botao btnlink">
 				<span class="text-center"><a class="botaospt"
-					href="playlists">Playlists</a></span>
+					href="playlists">Playlists</a></span> <!-- TODO não entra no servlet -->
 			</div>
 			<div class="col-md-2  botao btnlink">
 				<span class="text-center"><a class="botaospt"
