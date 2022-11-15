@@ -5,6 +5,7 @@ grant all PRIVILEGES ON opensongsdb.* to 'opensongs'@'localhost';
 
 CREATE TABLE tblMusica(
 	idMusica int not null auto_increment,
+    titulo varchar(100),
     artista varchar(100),
     album varchar(100),
     estilo int,
@@ -39,7 +40,9 @@ insert into tblUsuario values
 	(null,'Jonas','jonas@email.com','1234'),
     (null,'Cassia','cassia@email.com','cassia123'),
     (null,'Valdomiro','valdomiro@email.com','valdomiro123');
+    
+    alter table tblMusica add column titulo varchar(100) after idMusica;
 */
 use opensongsdb;
-
-Select * from tblUsuario;
+desc tblMusica;
+Select * from tblPlaylist;	

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Nova Playlist</title>
+<title>Upload de Música</title>
 
 
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -47,7 +47,7 @@
 				<div class="row">
 					<div class="col-md-2"></div>
 					<div class="col-md-8">
-						<form role="form" action="uploadsong" method="POST">
+						<form role="form" action="uploadsong" method="POST" enctype="multipart/form-data">
 							<div class="form-group">
 								<label for="songName"> Titulo da M&uacute;sica </label> <input
 									type="text" class="form-control" id="songName"
@@ -74,10 +74,14 @@
 									<option value="6">Outros</option>
 								</select>
 							</div>
-
+							<div class="form-group">
+								<label for="inputFile"> &Aacute;lbum </label> <input
+									type="file" class="form-control-file" id="fileMP3" name="fileMP3">
+							</div>
 							<button type="submit" class="btn btn-primary">Upload de M&uacute;sica </button>
 						</form>
 					</div>
+					<br/>
 					<div class="col-md-2"></div>
 				</div>
 			</div>
