@@ -6,7 +6,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
+import org.opensongs.model.Musica;
 import org.opensongs.model.Playlist;
 
 
@@ -69,6 +71,54 @@ public class PlaylistDAO implements GenericDAO{
 		return null;
 	}
 
+	public Playlist readDetailsById(Integer id){
+		Playlist playlist = null;
+		try {
+			
+			String query = 
+					"select playlists.idPlaylist as idPlaylist,"
+					+ "		playlists.idUsuario  as idUsuario,"
+					+ "     playlists.titulo     as pl_titulo,"
+					+ "     musicas.idMusica     as idMusica,"
+					+ "     musicas.titulo       as mus_titulo,"
+					+ "     musicas.artista      as artista,"
+					+ "     musicas.album        as album,"
+					+ "     musicas.estilo       as estilo,"
+					+ "     musicas.linkMP3      as linkMP3"
+					+ "	from tblPlaylist as playlists"
+					+ "		left outer join tblMusicaPlaylist as musicas_playlist on playlists.idPlaylist = musicas_playlist.idPlaylist"
+					+ " 	left outer join tblMusica as musicas on musicas_playlist.idMusica = musicas.idMusica"
+					+ " where playlists.idPlaylist= ?";
+			PreparedStatement stm = dataSource.getConnection().prepareStatement(query);
+			stm.setInt(1, id);
+			ResultSet resultSet = stm.executeQuery();
+			resultSet.next();
+			do {
+				if(Objects.isNull(playlist)) {					
+					playlist = new Playlist();
+					playlist.setMusicas(new ArrayList<Musica>());
+					playlist.setId(resultSet.getInt("idPlaylist"));
+					playlist.setTitulo(resultSet.getString("pl_titulo"));
+				}
+				
+				if (Objects.nonNull(resultSet.getString("mus_titulo"))) {
+                    Musica musica = new Musica();
+                    musica.setId(resultSet.getInt("idMusica"));
+                    musica.setTitulo(resultSet.getString("mus_titulo"));
+                    musica.setArtista(resultSet.getString("artista"));
+                    musica.setEstilo(resultSet.getInt("estilo"));
+                    musica.setAlbum(resultSet.getString("album"));
+                    musica.setLinkMP3(resultSet.getString("linkMP3"));
+                    playlist.getMusicas().add(musica);
+                }
+			} while(resultSet.next());
+			return playlist;
+		}catch(SQLException e) {
+			System.out.println("Erro ao obter detalhes da playlist "+e.getMessage());
+		}
+		return null;
+	}
+	
 	@Override
 	public void update(Object objeto) {
 		// TODO Auto-generated method stub

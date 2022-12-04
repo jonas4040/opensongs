@@ -49,11 +49,7 @@ a:hover, a:active, a:link{
     
 }
 
-.artista{
-    color: #FFFFFF;
-    font-size: x-small;
-}
-.tituloMusica{
+.musicaeartista{
     color: #FFFFFF;
     font-size: medium; 
 }
@@ -62,4 +58,3 @@ a:hover, a:active, a:link{
     width: "10%";
     height: "10%";
 }
-
