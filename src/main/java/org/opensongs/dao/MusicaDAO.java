@@ -1,7 +1,9 @@
 package org.opensongs.dao;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.opensongs.model.Musica;
@@ -35,7 +37,27 @@ public class MusicaDAO implements GenericDAO{
 
 	@Override
 	public List<Object> read(Object objCriterio) {
-		// TODO Auto-generated method stub
+		try {
+			String query = "SELECT * FROM tblMusica ORDER BY titulo";
+			PreparedStatement stm = dataSource.getConnection().prepareStatement(query);
+			ResultSet rs = stm.executeQuery();
+			
+			List<Object> listaMusicas = new ArrayList<>();
+			while(rs.next()) {
+				Musica musica = new Musica();
+				musica.setId(rs.getInt("idMusica"));
+				musica.setTitulo(rs.getString("titulo"));
+				musica.setArtista(rs.getString("artista"));
+				musica.setAlbum(rs.getString("album"));
+				musica.setEstilo(rs.getInt("estilo"));
+				musica.setLinkMP3(rs.getString("linKMP3"));
+				
+				listaMusicas.add(musica);
+			}
+			return listaMusicas;
+		}catch (SQLException e) {
+			System.out.println("Erro ao trazer acervo de Músicas"+e.getMessage());
+		}
 		return null;
 	}
 

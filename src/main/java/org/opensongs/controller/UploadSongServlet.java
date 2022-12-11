@@ -37,7 +37,7 @@ public class UploadSongServlet extends HttpServlet {
 				
 				InputStream originalFile = request.getPart("fileMP3").getInputStream();
 				String linkMP3 = request.getPart("fileMP3").getSubmittedFileName();
-				String fileName = "/home/jonas/git/opensongs/src/main/webapp"+ //put this to deploy: getServletContext().getContextPath()
+				String fileName = getServletContext().getRealPath("")+ // put this to deploy locally"/home/<user>/opensongs/src/main/webapp"+
 						"/musicas/"+
 						request.getPart("fileMP3").getSubmittedFileName();
 				FileOutputStream mp3File = new FileOutputStream(fileName);

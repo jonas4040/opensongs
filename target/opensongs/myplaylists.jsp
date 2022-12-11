@@ -51,7 +51,7 @@
 			</div>
 			<div class="col-md-2 botao btnlink">
 				<span class="text-center"><a class="botaospt"
-					href="playlists">Playlists</a></span>
+					href="playlists">Playlists</a></span> <!-- TODO não entra no servlet -->
 			</div>
 			<div class="col-md-2  botao btnlink">
 				<span class="text-center"><a class="botaospt"
@@ -68,30 +68,13 @@
 		<c:forEach var="playlist" items="${Usuario.playlists}">
 			<div class="row">
 				<div class="col-md-2">&nbsp;</div>
-				<div class="col-md-8">
-					&nbsp; <strong>${playlist.titulo}</strong><br />
-					<ul>
-						<c:forEach var="musica" items="${playlist.musicas}">
-							<div class="row center"><li>
-								${musica.titulo}(${musica.artista})
-								<audio controls>
-								
-									<source src="${musica.linkMP3}" />
-								
-								</audio>
-							</li></div>
-						</c:forEach>
-					</ul>
+				<div class="col-md-6">
+					&nbsp; <strong><a href="playlistdetails?id=${playlist.id}">${playlist.titulo}</a></strong>
+				</div>
+				<div class="col-md-4">
+					&nbsp;<a href="#imgplay"><img id ="imgplay" src="img/imgplay.png"></img></a><br />
 				</div>
 				<div class="col-md-2">&nbsp;</div>
-			</div>
-			<div class="row">
-				<div class="col-md-4">
-					&nbsp;<a href="#play">Aperte o play</a>
-				</div>
-			</div>
-			<div id="play" class="row">
-				
 			</div>
 		</c:forEach>
 

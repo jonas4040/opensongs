@@ -68,9 +68,11 @@
 		<c:forEach var="playlist" items="${Usuario.playlists}">
 			<div class="row">
 				<div class="col-md-2">&nbsp;</div>
-				<div class="col-md-8">
+				<div class="col-md-6">
 					&nbsp; <strong><a href="playlistdetails?id=${playlist.id}">${playlist.titulo}</a></strong>
-					&nbsp;<a href="#play">Aperte o play</a><br />
+				</div>
+				<div class="col-md-4">
+					&nbsp;<a href="#imgplay"><img id ="imgplay" src="img/imgplay.png"></img></a><br />
 				</div>
 				<div class="col-md-2">&nbsp;</div>
 			</div>

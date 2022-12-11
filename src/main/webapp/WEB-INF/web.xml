@@ -92,4 +92,24 @@
     <servlet-name>PlaylistDetailsServlet</servlet-name>
     <url-pattern>/playlistdetails</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>GetSongsServlet</display-name>
+    <servlet-name>GetSongsServlet</servlet-name>
+    <servlet-class>org.opensongs.controller.GetSongsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetSongsServlet</servlet-name>
+    <url-pattern>/getsongs</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AddToPlaylistServlet</display-name>
+    <servlet-name>AddToPlaylistServlet</servlet-name>
+    <servlet-class>org.opensongs.controller.AddToPlaylistServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddToPlaylistServlet</servlet-name>
+    <url-pattern>/addtoplaylist</url-pattern>
+  </servlet-mapping>
 </web-app>

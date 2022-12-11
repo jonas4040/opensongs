@@ -75,6 +75,14 @@
 			</div>
 			<div class="col-md-2">&nbsp;</div>
 		</div>
+		
+		<div class="row">
+			<div class="col-md-2">&nbsp;</div>
+			<div class="col-md-8">
+				<h5><a href="./getsongs?playlist=${Playlist.id}">+ Adicionar M&uacute;sicas</a></h5>
+			</div>
+			<div class="col-md-2">&nbsp;</div>
+		</div>
 
 		<c:forEach var="musica" items="${Playlist.musicas}">
 						<div class="row center">
@@ -87,7 +95,7 @@
 								<span class="playsong">
 									<audio controls>
 
-										<source src="${musica.linkMP3}" />
+										<source src="${request.contextPath}/${musica.linkMP3}" type="audio/mpeg"/>
 
 									</audio>
 								</span>

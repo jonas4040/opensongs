@@ -131,4 +131,22 @@ public class PlaylistDAO implements GenericDAO{
 		
 	}
 
+	public Boolean create(Integer idPlaylist, Integer idMusica) {
+		try {
+			String query = "INSERT INTO tblMusicaPlaylist VALUES(?,?)";
+			PreparedStatement stm = dataSource.getConnection().prepareStatement(query);
+			stm.setInt(1, idPlaylist);
+			stm.setInt(2, idMusica);
+			Integer resultadoQuery = stm.executeUpdate();
+			
+			if(resultadoQuery == 1) {	//	Se deu certo
+				return true;
+			}
+			
+		}catch (SQLException e) {
+			System.out.println("Erro ao inserir no BD "+e.getMessage());
+		}
+		return false;					//	Se deu errado
+	}
+
 }
