@@ -5,6 +5,7 @@ function adicionar(idPlaylist,idMusica){
 	xmlhttp.open("GET",hostname+"/opensongs"+urlparameters);
 	
 	xmlhttp.onreadystatechange=function(){
+		alert(xmlhttp.status);
 		if(xmlhttp.status === 200 && xmlhttp.readyState === 4){ // se status da pg for 0K e recebeu response do server
 			alert(xmlhttp.responseText);
 		}
