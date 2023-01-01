@@ -11,9 +11,9 @@ org/opensongs/model/Playlist.class
 org/opensongs/controller/NewPlaylistServlet.class
 org/opensongs/dao/MusicaDAO.class
 org/opensongs/model/Musica.class
-org/opensongs/controller/LoginServlet.class
 org/opensongs/controller/CreatePlaylistServlet.class
-org/opensongs/controller/UploadSongServlet.class
+org/opensongs/controller/LoginServlet.class
 org/opensongs/controller/AddToPlaylistServlet.class
-org/opensongs/model/Usuario.class
+org/opensongs/controller/UploadSongServlet.class
 org/opensongs/dao/PlaylistDAO.class
+org/opensongs/model/Usuario.class
