@@ -49,6 +49,7 @@ public class GetSongsServlet extends HttpServlet {
 			System.out.println("Erro ao montar página de músicas "+e.getMessage());
 			request.setAttribute("erroSTR", "Erro ao montar página de músicas");
 		}
+		
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(pgDestino);
 		dispatcher.forward(request, response);
 	}

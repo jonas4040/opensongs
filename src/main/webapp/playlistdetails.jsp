@@ -54,7 +54,6 @@
 			<div class="col-md-2 botao btnlink">
 				<span class="text-center"><a class="botaospt"
 					href="playlists">Playlists</a></span>
-				<!-- TODO não entra no servlet -->
 			</div>
 			<div class="col-md-2  botao btnlink">
 				<span class="text-center"><a class="botaospt"
@@ -79,7 +78,7 @@
 		<div class="row">
 			<div class="col-md-2">&nbsp;</div>
 			<div class="col-md-8">
-				<h5><a href="./getsongs?playlist=${Playlist.id}">+ Adicionar M&uacute;sicas</a></h5>
+				<h5><a href="getsongs?playlist=${Playlist.id}">+ Adicionar M&uacute;sicas</a></h5>
 			</div>
 			<div class="col-md-2">&nbsp;</div>
 		</div>
@@ -106,9 +105,9 @@
 
 	</div>
 
-	<script src="https://code.jquery.com/jquery-3.6.1.min.js"
-		integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
-		crossorigin="anonymous"></script>
+<!-- 	<script src="https://code.jquery.com/jquery-3.6.1.min.js" -->
+<!-- 		integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" -->
+<!-- 		crossorigin="anonymous"></script> -->
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
