@@ -95,8 +95,7 @@
 								<span class="album">(${musica.album})</span>
 								<span class="playsong">
 									<audio controls>
-
-										<source src="${request.contextPath}/${musica.linkMP3}" type="audio/mpeg"/>
+										<source src="${musica.linkMP3}" type="audio/mpeg"/>
 
 									</audio>
 								</span>
