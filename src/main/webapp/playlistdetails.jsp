@@ -71,6 +71,8 @@
 			<div class="col-md-2">&nbsp;</div>
 			<div class="col-md-8">
 				<h4>${Playlist.titulo}</h4>
+				<!-- ?id=${Playlist.id} -->
+				<a href="player"><img id="imgplay" src="	img/imgplay.png" alt="Reproduzir tudo" title="Tocar Playlist"></a>
 			</div>
 			<div class="col-md-2">&nbsp;</div>
 		</div>
